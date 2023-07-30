@@ -1,0 +1,28 @@
+﻿@model aspITIFinal.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 style="text-align:center;margin-bottom:30px;margin-top:130px">Details Category</h1>
+<div style="width:60%;margin-bottom:50px" class=" mx-auto mt-3 text-center shadow-lg">
+    <div class="row">
+        <form style="margin:40px auto ;width:90% " asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div style="margin-bottom:40px" class="form-group row">
+                <label asp-for="Category1" class="col-sm-2 col-form-label">Category1</label>
+                <div class="col-sm-10">
+                    <input asp-for="Category1" type="text" class="form-control">
+                </div>
+            </div>
+            <div style="margin:auto ;width:30%" class="form-group row">
+                <a style=" background-color:#6f42c1; border: 1px solid rgb(111,66,193); width: 100px; margin:5Px" class="btn btn-primary" asp-action="Edit" asp-route-id=" @Model?.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+            </div>
+            <div style="margin:auto ;width:30%" class="form-group row">
+                <a style=" background-color:#6f42c1; border: 1px solid rgb(111,66,193); width: 150px; margin:5Px" class="btn btn-primary" asp-action="Index"><i class="bi bi-skip-backward-fill"></i> Back to List</a>
+            </div>
+        </form>
+
+    </div>
+</div>

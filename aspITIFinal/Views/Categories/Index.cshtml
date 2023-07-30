@@ -1,0 +1,41 @@
+﻿@model IEnumerable<aspITIFinal.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 style="text-align:center;margin-bottom:30px;margin-top:120px">Categories</h1>
+<table id="table" class="table w-75 mx-auto mt-3 text-center shadow-lg table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category1)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category1)
+            </td>
+            <td>
+                 <a style=" width: 120px" class="btn btn-outline-primary " asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> Details</a>
+            </td>
+            <td>
+                 <a style=" width: 80px" class="btn btn-outline-success " asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+            </td>
+            <td>
+                 <a style=" width: 100px" class="btn btn-outline-danger " asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a style=" width: 250px;margin:30px" class="btn btn-outline-secondary " asp-action="Create"><i class="bi bi-plus-square"></i> Create New Category</a>
+
+<script>
+      $(document).ready(function () {
+            $('#table').DataTable();
+      });
+</script>

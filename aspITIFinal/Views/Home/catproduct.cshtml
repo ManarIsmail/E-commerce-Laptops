@@ -1,0 +1,33 @@
+﻿@model List<Product>
+<!-- ======= Products Section ======= -->
+<section class="productcontainer">
+    <div class="container">
+
+        <div class="section-title">
+            <h3>Browse our <span>Items</span></h3>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-4 col-md-6 productcolumn">
+                    <div class="productimage">
+                        <div class="productcolumn_icons">
+                            <a href="/home/productdetails/@item.Id" title="More details"><i class="bi bi-eye"></i></a>
+                            <a href="#" title="Add to wishlist"><i class="bi bi-heart"></i></a>
+                            <a href="/home/cart/@item.Id" title="Add to cart"><i class="bi bi-cart3"></i></a>
+                        </div>
+                        <div style="height: 60%; width: 60%;">
+                            <img src="../@item.Image" class="img-fluid" alt="" style="width:100%; height:100%;">
+                        </div>
+                    </div>
+                    <div class="productdes">
+                        <h6 class=".productdes_name">@item.Brand, @item.ProcessorType, @item.ProcessorCore</h6>
+                        <h6 class="productdes_price">@String.Format("{0:C}", @item.Price)</h6>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section><!-- Products Section -->

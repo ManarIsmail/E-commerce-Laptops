@@ -1,0 +1,28 @@
+﻿@{
+    var product = ViewBag.product;
+}
+
+<!--Cart-->
+
+<div class="container cart">
+    <div class="row text-center details-cart">
+        <div class="col-6"><h5>products</h5></div>
+        <div class="col-2"><h5>price</h5></div>
+        <div class="col-2"><h5>quantity</h5></div>
+        <div class="col-2"><h5>total</h5></div>
+    </div>
+
+    <div class="row cart-products">
+        @if (product != null)
+        {
+            <div class="col-1 cartcol"><button class="cart-content-btn-del"><i class="bi bi-x"></i></button></div>
+            <div class="col-3 cartcol cart-image-container"><div class="cart-img"><img src="../@product.Image" /></div></div>
+            <div class="col-2 cartcol"><p>@product.Brand, @product.ProcessorType, @product.ProcessorCore</p></div>
+            <div class="col-2 cartcol"><p>@String.Format("{0:C}", product.Price)</p></div>
+            <div class="col-2 cartcol"><p>q</p></div>
+            <div class="col-2 cartcol"><p>t</p></div>
+        }
+
+    </div>
+</div>
+<!--End Cart-->

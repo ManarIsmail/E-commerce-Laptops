@@ -1,0 +1,75 @@
+﻿@model IEnumerable<aspITIFinal.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 style="text-align:center;margin-bottom:30px;margin-top:120px">Products</h1>
+<table id="tables" class="table w-75 mx-auto mt-3 text-center shadow-lg table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessorType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessorCore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HardDiskCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RamCapacity)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessorCore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HardDiskCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RamCapacity)
+            </td>
+            
+            <td>
+                 <a style=" width: 120px" class="btn btn-outline-primary " asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> Details</a>
+            </td>
+            <td>
+                 <a style=" width: 80px" class="btn btn-outline-success " asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+            </td>
+            <td>
+                 <a style=" width: 100px" class="btn btn-outline-danger " asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<a style=" width: 250px;margin:30px; padding-top:10px;padding-bottom:10px" class="btn btn-outline-secondary " asp-action="Create"><i class="bi bi-plus-square"></i> Create New Product</a>
+
+<script>
+        $(document).ready(function () {
+            $('#tables').DataTable();
+        });
+ </script>
+

@@ -1,0 +1,53 @@
+﻿@model List<Product>
+
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio productcontainer">
+    <div class="container">
+
+        <div class="section-title">
+            <h3>all <span>collections</span></h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 d-flex">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    @foreach (var item in (List<Category>)ViewBag.cats)
+                    {
+                        <li data-filter=".filter_@item.Id">@item.Category1</li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="row portfolio-container">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter_@item.IdCat  productcolumn">
+
+                    <div class="productimage">
+                        <div class="productcolumn_icons">
+                            <a href="/home/productdetails/@item.Id" title="More details"><i class="bi bi-eye"></i></a>
+                            <a href="#" title="Add to wishlist"><i class="bi bi-heart"></i></a>
+                            <a href="/home/cart/@item.Id" title="Add to cart"><i class="bi bi-cart3"></i></a>
+                        </div>
+                        <div style="height: 60%; width: 60%;">
+                            <img src="../@item.Image" class="img-fluid" alt="" style="width:100%; height:100%;">
+                        </div>
+                    </div>
+
+                    <div class="productdes">
+                        <h6 class=".productdes_name">@item.Brand, @item.ProcessorType, @item.ProcessorCore</h6>
+                        <h6 class="productdes_price">@String.Format("{0:C}", @item.Price)</h6>
+                    </div>
+
+                </div>
+
+            }
+        </div>
+
+    </div>
+</section><!-- End Portfolio Section -->

@@ -1,0 +1,91 @@
+﻿@model List<ProductImage>
+@{
+    var data = ViewBag.product;
+}
+
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+        <div class="row gy-4" style=" display: flex; justify-content: space-evenly;">
+
+            <div class="col-lg-6 ">
+                <div class="portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="swiper-slide">
+                                <div style="height: 20rem; width: 20rem;">
+                                    <img src="../@item.Image" alt="" style="width:100%; height:100%;">
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                    <h3>Product Details</h3>
+                    <ul>
+                        @if (@data.Brand != null)
+                        {
+                            <li><strong>Brand: </strong>@data.Brand</li>
+                        }
+                        @if (@data.Type != null)
+                        {
+                            <li><strong>Type: </strong>@data.Type</li>
+                        }
+                        @if (@data.ModelName != null)
+                        {
+                            <li><strong>Model Name: </strong>@data.ModelName</li>
+                        }
+                        @if (@data.ProcessorType != null)
+                        {
+                            <li><strong>Processor Type: </strong>@data.ProcessorType</li>
+                        }
+                        @if (@data.ProcessorCore != null)
+                        {
+                            <li><strong>Processor Core: </strong>@data.ProcessorCore</li>
+                        }
+                        @if (@data.ScreenSize != null)
+                        {
+                            <li><strong>Screen Size: </strong>@data.ScreenSize</li>
+                        }
+                        @if (@data.HardDiskCapacity != null)
+                        {
+                            <li><strong>Hard Disk Capacity: </strong>@data.HardDiskCapacity</li>
+                        }
+                        @if (@data.RamCapacity != null)
+                        {
+                            <li><strong>Ram Capacity: </strong>@data.RamCapacity</li>
+                        }
+                        @if (@data.GraphicsCardBrand != null)
+                        {
+                            <li><strong>Graphics Card Brand: </strong>@data.GraphicsCardBrand</li>
+                        }
+                        @if (@data.GraphicsCardCapacity != null)
+                        {
+                            <li><strong>Graphics Card Capacity: </strong>@data.GraphicsCardCapacity</li>
+                        }
+                        @if (@data.OperatingSystem != null)
+                        {
+                            <li><strong>Operating System: </strong>@data.OperatingSystem</li>
+                        }
+                        @if (@data.Color != null)
+                        {
+                            <li><strong>Color: </strong>@data.Color</li>
+                        }
+                        <li><strong>Price: </strong>@String.Format("{0:C}", @data.Price)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Details Section -->

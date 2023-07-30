@@ -1,0 +1,112 @@
+﻿@model aspITIFinal.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 style="text-align:center;margin-bottom:30px;margin-top:140px">Create Product</h1>
+<div style="width:88% ;margin-bottom:50px" class=" mx-auto mt-3 text-center shadow-lg">
+    <div class="row">
+
+        <form style="margin:45px auto ;width:95% " asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="Brand" class="col-sm-2 col-form-label">Brand</label>
+                <div class="col-sm-10">
+                    <input asp-for="Brand" type="text" class="form-control">
+                </div>
+            </div>
+
+
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="Image" class="col-sm-2 col-form-label"> Image </label>
+                <div class="col-sm-10">
+                    <input asp-for="Image" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="Price" class="col-sm-2 col-form-label"> Price</label>
+                <div class="col-sm-10">
+                    <input asp-for="Price" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="IdCat" class="col-sm-2 col-form-label">CategoryID</label>
+                <div class="col-sm-10">
+                    <select asp-for="IdCat" class="form-control" asp-items="ViewBag.IdCat"></select>
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="ModelName" class="col-sm-2 col-form-label">ModelName</label>
+                <div class="col-sm-10">
+                    <input asp-for="ModelName" class="form-control" />
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="Type" class="col-sm-2 col-form-label">Type</label>
+                <div class="col-sm-10"><input asp-for="Type" class="form-control" /></div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="ProcessorType" class="col-sm-2 col-form-label">ProcessorType</label>
+                <div class="col-sm-10"><input asp-for="ProcessorType" class="form-control" /></div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="ProcessorCore" class="col-sm-2 col-form-label">ProcessorCore</label>
+                <div class="col-sm-10">  <input asp-for="ProcessorCore" class="form-control" /></div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="ScreenSize" class="col-sm-2 col-form-label">ScreenSize</label>
+                <div class="col-sm-10"><input asp-for="ScreenSize" class="form-control" /></div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="HardDiskCapacity" class="col-sm-2 col-form-label">HardDiskCapacity</label>
+                <div class="col-sm-10"><input asp-for="HardDiskCapacity" class="form-control" /></div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="RamCapacity" class="col-sm-2 col-form-label">RamCapacity</label>
+                <div class="col-sm-10">
+                    <input asp-for="RamCapacity" class="form-control" />
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="GraphicsCardBrand" class="col-sm-2 col-form-label">GraphicsCardBrand</label>
+                <div class="col-sm-10">
+                    <input asp-for="GraphicsCardBrand" class="form-control" />
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="GraphicsCardCapacity" class="col-sm-2 col-form-label">GraphicsCardCapacity</label>
+                <div class="col-sm-10">
+                    <input asp-for="GraphicsCardCapacity" class="form-control" />
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="OperatingSystem" class="col-sm-2 col-form-label">OperatingSystem</label>
+                <div class="col-sm-10">
+                    <input asp-for="OperatingSystem" class="form-control" />
+                </div>
+            </div>
+            <div style="margin-bottom:10px" class="form-group row">
+                <label asp-for="Color" class="col-sm-2 col-form-label">Color</label>
+                <div class="col-sm-10">
+                    <input asp-for="Color" class="form-control" />
+                </div>
+            </div>
+            <div style="width:20%; margin: auto" class="form-group row">
+                    <button type="submit" value="Save" style="margin-top:45px; background-color:#6f42c1; border: 1px solid rgb(111,66,193);padding:10px; width: 110px" class="btn btn-primary "><i class="bi bi-plus-square"></i> Create </button>
+              
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<div style="width:20%; margin-left: 20px">
+    <a style=" width: 150px; margin-top:10px;margin-bottom:10px;padding-top:12px; padding-bottom:12px; background-color:#6f42c1; border: 1px solid rgb(111,66,193); width: 200px;" class="btn btn-primary" asp-action="Index"><i class="bi bi-skip-backward-fill"></i> Back to List</a>
+</div>
+
+
